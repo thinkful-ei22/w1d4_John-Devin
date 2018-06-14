@@ -13,15 +13,13 @@ const addHandler = function(e){
 //Handle delete
 const deleteHandler = function(e){
   $('.shopping-list').on('click', '.shopping-item-delete', function(e){
-    //console.log('Delete button clicked!');
     $(e.currentTarget).closest('li').remove();
   });
 };
 
 const strikeThroughHandler = function(e){
-  $('.shopping-item-toggle').on('click', '.shopping-item-toggle', function(e){
-    console.log('Strikethrough!');
-    $(e.currentTarget).find('span').toggleClass('.shopping-item__checked');
+  $('.shopping-list').on('click', '.shopping-item-toggle', function(e){
+    $(e.currentTarget).parent().prev().toggleClass('shopping-item__checked');
   });
 };
 
