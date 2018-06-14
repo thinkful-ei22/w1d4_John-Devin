@@ -4,9 +4,14 @@
 function handleImage() {
   $('.thumbnail').on('click', event => {
     // save reference to this bulb,
-    const targetImgSrc = $(this.child);
+    event.stopPropagation();
+    const targetImgSrc = $(event.target).attr('src');
+    const targetImgAlt = $(event.target).attr('alt');
     
-    console.log(event.currentTarget);
+    console.log(targetImgSrc);
+
+    console.log($('.hero > img').attr('src', targetImgSrc));
+    console.log($('.hero > img').attr('alt', targetImgAlt));
 
     //$('.hero img').attr('src', ) = targetThumb.src;
 
