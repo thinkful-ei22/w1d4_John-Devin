@@ -18,8 +18,16 @@ const deleteHandler = function(e){
   });
 };
 
+const strikeThroughHandler = function(e){
+  $('.shopping-item-toggle').on('click', '.shopping-item-toggle', function(e){
+    console.log('Strikethrough!');
+    $(e.currentTarget).find('span').toggleClass('.shopping-item__checked');
+  });
+};
+
 $(function() { 
   deleteHandler();
+  strikeThroughHandler();
 });
 
 //Handle check
