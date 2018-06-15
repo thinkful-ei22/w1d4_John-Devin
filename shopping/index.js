@@ -1,7 +1,5 @@
 'use strict';
 
-console.log('Script linked');
-
 //Handle add
 const addHandler = function(e){
   $('#js-shopping-list-form').submit(function() {
@@ -33,20 +31,20 @@ const appendItem = function(name){
 //Handle delete
 const deleteHandler = function(e){
   $('.shopping-list').on('click', '.shopping-item-delete', function(e){
-    $(e.currentTarget).closest('li').remove();
+    $(this).closest('li').remove();
   });
 };
 
-const strikeThroughHandler = function(e){
+const checkHandler = function(e){
   $('.shopping-list').on('click', '.shopping-item-toggle', function(e){
-    $(e.currentTarget).parent().prev().toggleClass('shopping-item__checked');
+    $(this).parent().prev().toggleClass('shopping-item__checked');
   });
 };
 
 $(function() { 
   addHandler();
   deleteHandler();
-  strikeThroughHandler();
+  checkHandler();
 });
 
 //Handle check
